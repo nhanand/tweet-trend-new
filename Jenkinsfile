@@ -1,15 +1,20 @@
+
 pipeline {
     agent {
-        node {
-            label 'maven'
-        }
+            node {
+                label 'maven'
+            }
     }
 
-    stages {
-        stage('clone-code') {
-            steps {
-                git branch: 'main', url: 'https://github.com/nhanand/tweet-trend-new.git'
+environment{
+    PATH = "/opt/apache-maven-3.9.9/bin:$PATH" 
+    // this is the path to specify where maven is located else cleandeply will not execute
+}
+    stages{
+        Stage('build'){
+            steps{
+                sh 'mvn clean deploy'
             }
         }
-    }
+    } 
 }
