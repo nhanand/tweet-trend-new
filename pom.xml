@@ -85,10 +85,6 @@
 		</repository>
 	</distributionManagement>
 
-	<properties>
-  <sonar.organization>dwarka11-key</sonar.organization>
-  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-</properties>
 
 
 </project>
